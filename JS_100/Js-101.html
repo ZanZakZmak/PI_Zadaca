@@ -1,0 +1,18 @@
+<html>
+  <body></body>
+  <script>
+    let a = prompt("Unesi prvi broj");
+    let b = prompt("Unesi drugi broj");
+    let c = prompt("Unesi treći broj");
+    let d = prompt("Unesi četvrti broj");
+    let polje=[a,b,c,d]
+    let maks=0;
+
+    // tvoj kod
+    polje.forEach(element => {
+        if(maks<element){maks=element}
+    });
+
+    console.log("Najveći između njih je: " + maks);
+  </script>
+</html>

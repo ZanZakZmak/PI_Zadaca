@@ -1,0 +1,34 @@
+<html>
+  <body></body>
+  <script>
+    let bodovi = prompt("Unesi broj bodova");
+    let ocjena;
+    let poruka;
+
+    // tvoj kod
+    if (bodovi >= 89) {
+      ocjena = 5;
+    }
+    if (bodovi >= 76 && bodovi <= 88) {
+      ocjena = 4;
+    }
+    if (bodovi >= 63 && bodovi <= 75) {
+      ocjena = 3;
+    }
+    if (bodovi >= 50 && bodovi <= 62) {
+      ocjena = 2;
+    }
+    if (bodovi <= 49) {
+      ocjena = 1;
+    }
+
+    if (ocjena >= 2) {
+      console.log(`Vaša ocjena je ${ocjena} Čestitke na prolazu`);
+    }
+    if (ocjena < 2) {
+      console.log(`Vaša ocjena je ${ocjena} više sreće drugi put`);
+    }
+
+    console.log(poruka);
+  </script>
+</html>
