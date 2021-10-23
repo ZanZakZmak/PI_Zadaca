@@ -1,0 +1,26 @@
+<html>
+  <body></body>
+  <script>
+    // napisati funkciju `isti_znakovi` koja prima string i vraća najveći broj uzastopno istih znakova u tom stringu.
+    const istiZnakovi = (rijec) => {
+      let broj_znakova = 0;
+      let streak = 1;
+      //petlja za proc po rijeci
+      for (let i = 0; i < rijec.length; i++) {
+        //zadnja petlja ce provjeriti zadnje slovo stringa sa nepostojecim tako da se resolva else
+        if (rijec[i] === rijec[i + 1]) {
+          streak++;
+        } else {
+          //provjeri streak
+          if (streak > broj_znakova) {
+            broj_znakova = streak;
+          }
+          streak = 1;
+        }
+      }
+      return broj_znakova;
+    };
+    console.log("broj uzastopnih znakova je ", istiZnakovi("baaaccd")); // → 3
+    console.log("broj uzastopnih znakova je ", istiZnakovi("ba2dll")); // → 2
+  </script>
+</html>

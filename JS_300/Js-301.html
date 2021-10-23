@@ -1,0 +1,25 @@
+<html>
+  <body></body>
+  <script>
+    // napisati funkciju `min` koja prima dva argumenta i vraća natrag manjeg.
+    function min(a, b) {
+      let minimal = 0;
+      if (a >= b) {
+        return b;
+      } else {
+        return a;
+      }
+    }
+
+    //Arrow funkcija
+    const min_arrow = (a, b) => {
+      return a >= b ? b : a;
+    };
+
+    console.log(min(0, 4)); // → 0
+    console.log(min(0, -4)); // → -4
+
+    console.log(min_arrow(0, 4)); // → 0
+    console.log(min_arrow(0, -4)); // → -4
+  </script>
+</html>
