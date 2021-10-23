@@ -1,0 +1,22 @@
+<html>
+  <body></body>
+  <script>
+    /* FizzBuzz. Napiši program koji će ispisati sve brojeve od 1 do 100 uz dvije iznimke. Ukoliko je
+        broj djeljiv s 3 umjesto njega će ispisati "Fizz", ukoliko je djeljiv s 5, umjesto njega će ispisati "Buzz", a
+        ako je djeljiv s 3 i 5, ispisat će umjesto njega "FizzBuzz". */
+
+    for (let i = 1; 101 > i; i++) {
+      let ispis = "";
+      if (i % 3 == 0) {
+        ispis = ispis + "Fizz";
+      }
+      if (i % 5 == 0) {
+        ispis = ispis + "Buzz";
+      }
+      if (!(i % 3 == 0 || i % 5 == 0)) {
+        ispis = i;
+      }
+      console.log(ispis);
+    }
+  </script>
+</html>

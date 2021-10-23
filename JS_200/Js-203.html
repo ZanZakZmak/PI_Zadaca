@@ -1,0 +1,36 @@
+<html>
+  <body></body>
+  <script>
+    /*Napiši program koji ispisuje šahovsko polje koristeći razmak ( " " ) i znak # :
+      Napravi program tako da postoji na početku definirana varijabla velicina  koja označava veličinu
+      kvadrata.*/
+    let velicina = prompt("Unesi velićinu šahovnice");
+    for (let i = 0; i < velicina; i++) {
+      let ispis = "";
+      //parni pocine " "
+      if (i % 2 === 0) {
+        for (let j = 0; j < velicina; j++) {
+          if (j % 2 == 0) {
+            ispis += " ";
+          }
+          if (!(j % 2 == 0)) {
+            ispis += "#";
+          }
+        }
+      }
+      //neparni pocine "#"
+      if (!(i % 2 === 0)) {
+        for (let j = 0; j < velicina; j++) {
+          if (j % 2 == 0) {
+            ispis += "#";
+          }
+          if (!(j % 2 == 0)) {
+            ispis += " ";
+          }
+        }
+      }
+
+      console.log(ispis);
+    }
+  </script>
+</html>
