@@ -1,0 +1,36 @@
+<html>
+  <body></body>
+  <script>
+    //Napiši funkciju zagrade  koja će provjeriti jesu li zagrade valjano ugnježdene:
+    let zagrade = function (s) {
+      // ... implementiraj me :)
+      let stog = [];
+
+      // petlja za ici kroz
+      for (let i = 0; i < s.length; i++) {
+        if (s[i] == "(" || s[i] == "[" || s[i] == "{") {
+          stog.push(s[i]);
+        } else {
+          //ako su isti sa stogom izbacujemo ih
+          if (s[i] == ")" && stog[stog.length - 1] == "(") {
+            stog.pop();
+          } else if (s[i] == "]" && stog[stog.length - 1] == "[") {
+            stog.pop();
+          } else if (s[i] == "}" && stog[stog.length - 1] == "{") {
+            stog.pop();
+          } else {
+            return false;
+          }
+        }
+      }
+      //ako je prazan stog onda su sve zagrade dobro ugnjrždene
+      if (stog.length == 0) {
+        return true;
+      }
+    };
+
+    console.log(zagrade("[()]()()")); // → true
+    console.log(zagrade("{[((()))]}")); // → true
+    console.log(zagrade("({)}")); // → false
+  </script>
+</html>

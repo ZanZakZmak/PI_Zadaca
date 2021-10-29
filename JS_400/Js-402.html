@@ -1,0 +1,94 @@
+<html>
+  <body></body>
+  <script>
+    /* Nadogradi prethodni zadatak na način da ime i prezime ne moraju biti istovjetni pojmu, već
+        je dovoljno da taj pojam sadržavaju. Neka pretraga bude neosjetljiva na velika i mala slova. Dodaj u tu
+        funkciju još jedan parametar status  na način da funkcija provjerava jeli student.status
+        istovjetan primljenom parametru status . Drugim riječima, ne provjerava samo upisane studente
+        nego se može specificirati status upisa.*/
+
+    //lista studenata
+    let studenti = [
+      {
+        Ime: "janko",
+        Prezime: "janković",
+        Upisan: true,
+        Status: "redovan",
+      },
+      {
+        Ime: "stipe",
+        Prezime: "stipić",
+        Upisan: false,
+        Status: "redovan",
+      },
+      {
+        Ime: "ana",
+        Prezime: "anić",
+        Upisan: true,
+        Status: "izvanredni",
+      },
+      {
+        Ime: "leon",
+        Prezime: "vila",
+        Upisan: false,
+        Status: "redovan",
+      },
+      {
+        Ime: "noel",
+        Prezime: "pila",
+        Upisan: true,
+        Status: "izvanredni",
+      },
+      {
+        Ime: "albus",
+        Prezime: "glupovrata",
+        Upisan: false,
+        Status: "izvanredni",
+      },
+      {
+        Ime: "branko",
+        Prezime: "brankić",
+        Upisan: false,
+        Status: "redovan",
+      },
+      {
+        Ime: "ivan",
+        Prezime: "ivić",
+        Upisan: true,
+        Status: "izvanredni",
+      },
+      {
+        Ime: "tea",
+        Prezime: "teić",
+        Upisan: false,
+        Status: "redovan",
+      },
+      {
+        Ime: "sibirski",
+        Prezime: "plavac",
+        Upisan: true,
+        Status: "redovan",
+      },
+    ];
+
+    //funkcija provjeri(lista,pojam,status)
+    const provjeri = (lista, pojam, status) => {
+      let rezultat = false;
+      let LCpojam = pojam.toLowerCase();
+      lista.forEach((e) => {
+        let ime = !(e.Ime.toLowerCase().search(LCpojam) == -1);
+        let prezime = !(e.Prezime.toLowerCase().search(LCpojam) == -1);
+        if ((ime || prezime) && e.Upisan && status == e.Status) {
+          rezultat = true;
+        }
+      });
+      return rezultat;
+    };
+
+    //poziv
+    console.log(provjeri(studenti, "Plavac", "redovan"));
+    console.log(provjeri(studenti, "tea", "izvanredni"));
+    console.log(provjeri(studenti, "ivan", "izvanredni"));
+    console.log(provjeri(studenti, "ivan", "redovan"));
+  </script>
+</html>

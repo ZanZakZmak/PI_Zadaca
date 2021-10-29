@@ -1,0 +1,78 @@
+<html>
+  <body></body>
+  <script>
+    /*Sastavi listu od 10 studenata sa sljedećim svojstvima: ime , prezime , upisan
+        (Boolean true / false ). Vrijednosti svojstava proizvoljno odaberi. Sastavi funkciju
+        provjeri(lista, pojam) koja vraća true ukoliko postoji student na lista  čije ime ili
+        prezime je baš pojam , a upisan je.*/
+
+    //lista studenata
+    let studenti = [
+      {
+        Ime: "janko",
+        Prezime: "janković",
+        Upisan: true,
+      },
+      {
+        Ime: "stipe",
+        Prezime: "stipić",
+        Upisan: false,
+      },
+      {
+        Ime: "ana",
+        Prezime: "anić",
+        Upisan: true,
+      },
+      {
+        Ime: "leon",
+        Prezime: "vila",
+        Upisan: false,
+      },
+      {
+        Ime: "noel",
+        Prezime: "pila",
+        Upisan: true,
+      },
+      {
+        Ime: "albus",
+        Prezime: "glupovrata",
+        Upisan: false,
+      },
+      {
+        Ime: "branko",
+        Prezime: "brankić",
+        Upisan: false,
+      },
+      {
+        Ime: "ivan",
+        Prezime: "ivić",
+        Upisan: true,
+      },
+      {
+        Ime: "tea",
+        Prezime: "teić",
+        Upisan: false,
+      },
+      {
+        Ime: "sibirski",
+        Prezime: "plavac",
+        Upisan: true,
+      },
+    ];
+
+    //funkcija provjeri(lista,pojam)
+    const provjeri = (lista, pojam) => {
+      let rezultat = false;
+      lista.forEach((e) => {
+        if ((e.Ime == pojam || e.Prezime == pojam) && e.Upisan) {
+          rezultat = true;
+        }
+      });
+      return rezultat;
+    };
+
+    //poziv
+    console.log(provjeri(studenti, "plavac"));
+    console.log(provjeri(studenti, "tea"));
+  </script>
+</html>
